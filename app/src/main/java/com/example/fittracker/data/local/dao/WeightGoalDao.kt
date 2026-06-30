@@ -1,6 +1,5 @@
 package com.example.fittracker.data.local.dao
 
-import android.health.connect.datatypes.ExercisePerformanceGoal
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy

@@ -9,7 +9,6 @@ import com.example.fittracker.data.local.dao.WorkoutSetDao
 import com.example.fittracker.data.local.entity.WorkoutPlan
 import com.example.fittracker.data.local.entity.WorkoutPlanSchedule
 import kotlinx.coroutines.flow.Flow
-import com.example.fittracker.data.local.entity.ExerciseEntity
 import com.example.fittracker.data.local.entity.WorkoutExercise
 import com.example.fittracker.data.local.entity.WorkoutExerciseWithExercise
 import com.example.fittracker.data.local.entity.WorkoutSession
@@ -75,7 +74,7 @@ class WorkoutRepository(
     }
 
     suspend fun insertSets(sets: List<WorkoutSet>) {
-        workoutSetDao.insertAll(sets)
+        setDao.insertAll(sets)
     }
 
     suspend fun startWorkout(

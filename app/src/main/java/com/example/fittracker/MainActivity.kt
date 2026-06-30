@@ -1,17 +1,13 @@
-package com.example.fittracker
+package com.hendrik.fittracker
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.fittracker.data.local.DatabaseProvider
 import com.example.fittracker.repository.WorkoutRepository
-import com.example.fittracker.ui.theme.FitTrackerTheme
 import com.example.fittracker.viewmodel.AuthViewModel
 import com.example.fittracker.viewmodel.WorkoutViewModelFactory
 
@@ -22,7 +18,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.fittracker.data.repository.ExerciseRepository
-import com.example.fittracker.navigation.Screen
 import com.example.fittracker.repository.WorkoutSessionRepository
 import com.example.fittracker.viewmodel.WorkoutViewModel
 
@@ -82,7 +77,8 @@ class MainActivity : ComponentActivity() {
                 scheduleDao = db.workoutPlanScheduleDao(),
                 workoutExerciseDao = db.workoutExerciseDao(),
                 sessionDao = db.workoutSessionDao(),
-                sessionExerciseDao = db.workoutSessionExerciseDao()
+                sessionExerciseDao = db.workoutSessionExerciseDao(),
+                setDao = db.workoutSetDao()
             )
 
             val workoutSessionRepository = WorkoutSessionRepository(

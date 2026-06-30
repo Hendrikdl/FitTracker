@@ -1,6 +1,5 @@
 package com.example.fittracker.data.remote.wger
 
-import com.example.fittracker.data.remote.wger.WgerApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

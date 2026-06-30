@@ -1,7 +1,5 @@
 package com.example.fittracker.repository
 
-import com.example.fittracker.data.local.dao.ExerciseDao
-import com.example.fittracker.data.local.dao.WorkoutPlanDao
 import com.example.fittracker.data.local.dao.WorkoutSessionDao
 import com.example.fittracker.data.local.dao.WorkoutSessionExerciseDao
 import com.example.fittracker.data.local.dao.WorkoutSessionSetDao

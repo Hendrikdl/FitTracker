@@ -17,8 +17,7 @@ class WorkoutViewModel(
     private val repo: WorkoutRepository,
     private val exerciseRepo: ExerciseRepository,
     private val sessionRepo: WorkoutSessionRepository,
-    private val repository: WorkoutRepository
-) : ViewModel() {
+    ) : ViewModel() {
 
     // -------------------------
     // ALL PLANS
@@ -43,11 +42,6 @@ class WorkoutViewModel(
             )
     
 
-    fun saveExerciseSets(sets: List<WorkoutSet>) {
-        viewModelScope.launch {
-            repository.insertSets(sets)
-        }
-    }
 
     fun addExerciseToPlan(
         planId: Int,
@@ -105,6 +99,12 @@ class WorkoutViewModel(
     }
     fun getSessionExercises(sessionId: Int) =
         sessionRepo.getSessionExercises(sessionId)
+
+    fun saveExerciseSets(sets: List<WorkoutSet>) {
+        viewModelScope.launch {
+            repo.insertSets(sets)
+        }
+    }
 
     fun saveSet(
         sessionId: Int,
